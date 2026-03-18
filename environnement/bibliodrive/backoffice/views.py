@@ -72,3 +72,9 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect("acceuil")
+
+def book_reserved(request, book_id):
+    book = Title.objects.get(pk = book_id)
+    book.reserved = not book.reserved
+    book.save()
+    return redirect("acceuil")
