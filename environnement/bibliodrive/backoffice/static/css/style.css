@@ -479,3 +479,102 @@ tes d'erreurs Django */
     font-size: 0.8rem;
     margin-bottom: 10px;
 }
+
+/* Champ de recherche */
+input[type="text"] { /* Adapte le sélecteur si nécessaire */
+    padding: 10px 20px;
+    border-radius: 25px 0 0 25px; /* Arrondi à gauche seulement */
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50; /* Une lueur verte au clic */
+}
+
+/* Bouton Soumettre */
+button[type="submit"] {
+    border-radius: 0 25px 25px 0; /* Arrondi à droite seulement */
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+/* Le conteneur des cartes (Grid ou Flex) */
+/* Titre de la page */
+.newH1 {
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 40px 0 30px 5%;
+}
+
+/* Alignement de la grille */
+.container-des-livres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 5%;
+    justify-content: center;
+}
+
+/* Style de base des cartes (Disponible) */
+.carte-livre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    width: 150px;
+    height: 180px;
+    padding: 15px;
+    border-radius: 12px;
+    
+    /* Couleurs */
+    background: linear-gradient(145deg, #3d6e35, #264a22); /* Vert avec relief */
+    color: #ffffff !important; /* Texte blanc forcé */
+    text-decoration: none !important; /* Supprime le soulignement bleu */
+    
+    /* Effets */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.carte-livre:hover {
+    transform: translateY(-8px);
+    background: #4a8541;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Style des cartes (Réservé / cardAuthorR) */
+.livreR {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    width: 150px;
+    height: 180px;
+    padding: 15px;
+    border-radius: 12px;
+    
+    background: #1a1a1a;
+    color: #555555 !important;
+    text-decoration: none !important;
+    border: 1px solid #333;
+    
+    cursor: not-allowed;
+    transition: all 0.2s;
+}
+
+.livreR:hover {
+    background: #222;
+    color: #777 !important;
+}
