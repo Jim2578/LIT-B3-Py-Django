@@ -1,0 +1,13 @@
+{% extends "gabari.html"%}
+{% block content %}
+    <h3>Publisher: {{pub.name}} by {{pub.compagny_name}}</h3></br>
+    <h4>{{pub.comments}}</h4></br>
+    <h4>Adress: {{pub.adress}} {{pub.city}} {{pub.zip}} {{pub.state}}</h4></br>
+    <h4>Phone : {{pub.telephone}}</h4></br>
+    <h4>Fax : {{pub.fax}}</h4></br>
+    <h4>Books Publish : </h4></br>
+    {% for b in book%}
+      <a href="{% url 'book_detail' book_id=b.isbn %}" class="cardAuthor">{{b.title}}</a>
+    {% endfor %}
+{% endblock%}
+ 

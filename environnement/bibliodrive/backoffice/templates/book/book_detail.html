@@ -1,0 +1,26 @@
+{% extends "gabari.html"%}
+{% block content %}
+    <h3>Book: {{book.title}} - {{book.year_published}}</h3></br>
+    <h4>{{book.description}}</h4></br>
+    <h4>{{book.notes}}</h4></br>
+    <h4>{{book.subject}} - {{book.comments}}</h4></br>
+    <h4>Author:</h4></br>
+    <div class="button-container">
+    {% for a in book.authors.all%}
+            <a href="{% url 'author_detail' author_id=a.id %}" class="book-button">
+                {{a.name}}
+            </a>
+    {% endfor %}
+    </div>
+    <h4>Publishers:</h4></br>
+    <div class="button-container">
+    {% for p in pub%}
+            <a href="{% url 'publisher_detail' pubid=p.pubid %}" class="book-button">
+                {{p.name}}
+            </a>
+    {% endfor %}
+    </div>
+{% endblock%}
+
+
+ 

@@ -1,0 +1,13 @@
+{% extends "gabari.html"%}
+{% block content %}
+    <h2>Nom: {{author.name}}</h2></br>
+    <h2>Année de Naissance: {{author.year_born}}</h2></br>
+    <div class="button-container">
+        {% for b in books %}
+            <a href="{% url 'book_detail' book_id=b.isbn %}" class="book-button">
+                {{b.title}}
+            </a>
+        {% endfor %}
+    </div>
+{% endblock%}
+ 

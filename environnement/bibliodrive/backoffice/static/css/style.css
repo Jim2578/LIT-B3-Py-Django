@@ -1,0 +1,481 @@
+h1 {
+    color: whitesmoke;
+    text-decoration: solid;
+}
+.contentAuthor {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cardAuthor {
+  flex: 1;
+  /* 1. On enlève le style moche par défaut */
+  border: none;
+  outline: none;
+  appearance: none;
+  
+  /* 2. On crée le look moderne */
+  background-color: #2D5A27; /* Un beau vert forêt */
+  color: white;
+  padding: 25px 15px;
+  border-radius: 12px;      /* Coins arrondis */
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  
+  /* 3. L'ombre pour donner du relief */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* 4. Animation fluide */
+  transition: all 0.3s ease;
+  background-image: none;    /* Supprime les dégradés gris par défaut */
+  background-color: #2D5A27; /* Force TA couleur (ex: vert forêt) */
+  appearance: none;          /* Supprime le look "système" du bouton */
+  -webkit-appearance: none;  /* Idem pour Safari/Chrome */
+  border: none;
+}
+
+/* Effet quand on passe la souris */
+.cardAuthor:hover {
+  background-color: #3e7b35;
+  transform: translateY(-3px); /* Le bouton monte légèrement */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Effet quand on clique */
+.cardAuthor:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardAuthorR {
+  flex: 1;
+  /* 1. On enlève le style moche par défaut */
+  border: none;
+  outline: none;
+  appearance: none;
+  
+  /* 2. On crée le look moderne */
+  background-color: red; /* Un beau vert forêt */
+  color: white;
+  padding: 25px 15px;
+  border-radius: 12px;      /* Coins arrondis */
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  
+  /* 3. L'ombre pour donner du relief */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* 4. Animation fluide */
+  transition: all 0.3s ease;
+  background-image: none;    /* Supprime les dégradés gris par défaut */
+  background-color: red; /* Force TA couleur (ex: vert forêt) */
+  appearance: none;          /* Supprime le look "système" du bouton */
+  -webkit-appearance: none;  /* Idem pour Safari/Chrome */
+  border: none;
+}
+
+/* Effet quand on passe la souris */
+.cardAuthorR:hover {
+  background-color: red;
+  transform: translateY(-3px); /* Le bouton monte légèrement */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Effet quand on clique */
+.cardAuthorR:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Le conteneur qui aligne sur une ligne */
+.button-container {
+    display: flex;
+    gap: 15px;      /* Espace entre les boutons */
+    margin-top: 20px;
+}
+
+/* On stylise le lien pour qu'il ressemble à un bouton parfait */
+.book-button {
+    flex: 1;              /* Les 3 prennent la même largeur */
+    text-align: center;
+    text-decoration: none; /* Enlève le soulignement bleu du lien */
+    
+    /* RESET TOTAL DU GRIS */
+    background: #2D5A27;  /* Ton vert FireWalk */
+    border: none;
+    outline: none;
+    
+    /* Design moderne */
+    color: white !important; /* Force le texte en blanc */
+    padding: 15px 10px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+/* Effet au survol */
+.book-button:hover {
+    background: #3e7b35;
+    color: white;
+}
+/* Barre principale */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo à gauche, liens à droite */
+    align-items: center;
+    background-color: #1a1a1a; /* Noir moderne */
+    padding: 0 10%; /* Marges sur les côtés pour centrer le contenu */
+    height: 70px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* ============================================================
+   LA BARRE DE NAVIGATION (CONTAINER PRINCIPAL)
+   ============================================================ */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Écarte Logo | Liens | Profil */
+    align-items: center;            /* Alignement vertical parfait */
+    padding: 0 40px;               /* Marges sur les côtés */
+    height: 70px;                  /* Hauteur fixe pour tout stabiliser */
+    background-color: #121212;      
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- Bloc Gauche : Logo --- */
+.logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    flex: 1; /* Force le logo à prendre un espace défini */
+}
+
+/* --- Bloc Centre : Liens de navigation --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px; /* L'espace entre tes liens */
+    flex: 2;   /* Donne plus d'espace au centre */
+}
+
+/* --- Bloc Droite : Profil Utilisateur --- */
+.user-profile {
+    color: #2D5A27; 
+    font-weight: bold;
+    font-size: 0.95rem;
+    flex: 1;        /* Équilibre avec le logo pour centrer le milieu */
+    text-align: right;
+}
+
+/* ============================================================
+   STYLE DES LIENS ET BOUTONS
+   ============================================================ */
+
+/* Liens standards (Auteur, Livre, etc.) */
+.nav-links a:not(.nav-btn) {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+    white-space: nowrap; /* Empêche le texte de sauter à la ligne */
+}
+
+.nav-links a:not(.nav-btn):hover {
+    color: #ffffff;
+}
+
+/* La barre d'animation verte */
+.nav-links a:not(.nav-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #2D5A27;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:not(.nav-btn):hover::after {
+    width: 100%;
+}
+
+/* Bouton Connexion / Déconnexion */
+.nav-btn {
+    background-color: #ffffff;
+    color: #1a1a1a !important;
+    padding: 8px 22px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    background-color: #2D5A27;
+    color: #ffffff !important;
+    transform: scale(1.05);
+}
+
+/* Correctif pour le formulaire Django Logout */
+.nav-links form {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* --- Conteneur de la barre de recherche --- */
+.search-container {
+    display: flex;
+    height: 45px; /* On fixe une hauteur nette */
+    max-width: 600px;
+    margin: 40px auto;
+    background: #333; /* Fond gris foncé */
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid #444;
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0 20px;
+    color: white;
+    outline: none;
+}
+
+.search-submit {
+    background: #ffffff;
+    color: #333;
+    border: none;
+    padding: 0 25px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 100%; /* S'assure de remplir le container */
+    transition: background 0.3s;
+}
+
+.search-submit:hover {
+    background: #2D5A27;
+    color: white;
+}
+
+/* --- Adaptation Mobile --- */
+@media (max-width: 480px) {
+    .search-container {
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: none;
+        background: transparent;
+    }
+    
+    .search-input {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .search-submit {
+        padding: 12px;
+        border-radius: 8px;
+    }
+}
+
+/* Conteneur principal de la carte */
+.login-container {
+    max-width: 400px;
+    margin: 60px auto; 
+    padding: 40px;
+    background-color: #1a1a1a; /* Fond sombre de ta carte */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    font-family: 'Inter', sans-serif;
+}
+
+.login-container h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* On cible les div qui entourent chaque label/input */
+.login-container form div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Force l'input à aller sous le label */
+    align-items: flex-start; /* Aligne le texte à gauche */
+}
+
+.login-container label {
+    color: #efefef;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Style des inputs text et password */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%; /* Prend toute la largeur de la carte */
+    padding: 12px 15px;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box; /* Empêche l'input de dépasser de la carte */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #2D5A27; /* Ton vert fétiche au clic */
+}
+
+/* Le gros bouton blanc "Se connecter" */
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.login-container button:hover {
+    background-color: #2D5A27;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Style du paragraphe "Pas de compte ?" */
+.login-container p {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #aaaaaa; /* Gris clair pour ne pas voler la vedette au bouton */
+    text-align: center;
+}
+
+/* Style du lien "S'inscrire" */
+.login-container p a {
+    color: #ffffff; /* Blanc pour qu'il ressorte un peu plus */
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent; /* Prépare l'effet de soulignement */
+}
+
+/* Effet au survol du lien */
+.login-container p a:hover {
+    color: #2D5A27; /* Ton vert fétiche */
+    border-bottom: 1px solid #2D5A27; /* Soulignement élégant au survol */
+}
+
+/* Conteneur principal (à ajouter autour de ton formulaire dans le HTML) */
+.signup-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    color: white;
+}
+
+.signup-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: var(--font-serif);
+}
+
+/* Ciblage des paragraphes générés par Django {{ form.as_p }} */
+.signup-container form p {
+    display: flex;
+    flex-direction: column; /* Force l'input sous le label */
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Style des labels Django */
+.signup-container label {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Style de tous les inputs (text, password, email) */
+.signup-container input:not([type="submit"]) {
+    width: 100%;
+    padding: 12px;
+    background-color: #262626;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box; /* Empêche le débordement */
+    transition: border-color 0.3s;
+}
+
+.signup-container input:focus {
+    border-color: #2D5A27;
+    outline: none;
+}
+
+/* Style du bouton submit */
+.signup-container input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.signup-container input[type="submit"]:hover {
+    background-color: #2D5A27;
+    color: white;
+}
+
+/* Style des lis
+tes d'erreurs Django */
+.signup-container .errorlist {
+    color: #ff4d4d;
+    list-style: none;
+    padding: 0;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}

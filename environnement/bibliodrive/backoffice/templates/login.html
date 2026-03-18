@@ -1,0 +1,22 @@
+{% extends "gabari.html"%}
+{% block content %}
+<div class="login-container">
+    <h1>Connexion</h1>
+    <form method="POST">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" name="username" id="username" required placeholder="Votre pseudo">
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" required placeholder="********">
+        </div>
+    <button type="submit" class="login-btn">Se connecter</button>
+    </form>
+    <p>Pas de compte ? → <a href="{% url 'signup_view' %}">S'inscrire</a></p>
+    {% for message in messages %}
+        <div class="error-message">{{ message }}</div>
+    {% endfor %}
+</div>
+{% endblock%}

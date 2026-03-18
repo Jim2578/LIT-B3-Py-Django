@@ -1,0 +1,18 @@
+{% extends "gabari.html"%}
+{% block content %}
+  <h1>List of Book</h1>
+  <form class = "search-container" method="GET">
+    <input class = "search-input" type="text" name="querryTitle" placeholder="Rechercher un titre ou ISBN" value = {{querry}}></input>
+    <input class = "search-submit" type="submit"></input>
+  </form>
+  <div class="contentAuthor">
+  {% for b in book%}
+      {% if b.resvered %}
+        <a href="{% url 'book_detail' book_id=b.isbn %}" class="cardAuthorR">{{b.title}}</a>
+      {% else %}
+        <a href="{% url 'book_detail' book_id=b.isbn %}" class="cardAuthor">{{b.title}}</a>
+      {% endif%}
+  {% endfor %}
+  </div>
+{% endblock%}
+ 

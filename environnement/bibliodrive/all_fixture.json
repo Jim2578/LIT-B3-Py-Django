@@ -1,0 +1,229 @@
+[
+  {
+    "model": "backoffice.author",
+    "pk": 1,
+    "fields": {
+      "name": "Victor Hugo",
+      "year_born": 1802
+    }
+  },
+  {
+    "model": "backoffice.author",
+    "pk": 2,
+    "fields": {
+      "name": "George Orwell",
+      "year_born": 1903
+    }
+  },
+  {
+    "model": "backoffice.author",
+    "pk": 3,
+    "fields": {
+      "name": "Jane Austen",
+      "year_born": 1775
+    }
+  },
+  {
+    "model": "backoffice.author",
+    "pk": 4,
+    "fields": {
+      "name": "Albert Camus",
+      "year_born": 1913
+    }
+  },
+  {
+    "model": "backoffice.author",
+    "pk": 5,
+    "fields": {
+      "name": "J.K. Rowling",
+      "year_born": 1965
+    }
+  },
+
+  {
+    "model": "backoffice.publishers",
+    "pk": 1,
+    "fields": {
+      "name": "Gallimard",
+      "compagny_name": "Éditions Gallimard",
+      "address": "5 Rue Gaston Gallimard",
+      "city": "Paris",
+      "state": "FR",
+      "zip": "75007",
+      "telephone": "0102030405",
+      "fax": "0102030406",
+      "comments": "Maison d'édition française"
+    }
+  },
+  {
+    "model": "backoffice.publishers",
+    "pk": 2,
+    "fields": {
+      "name": "Penguin",
+      "compagny_name": "Penguin Random House",
+      "address": "1745 Broadway",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10019",
+      "telephone": "2127829000",
+      "fax": "2127829001",
+      "comments": "Éditeur international"
+    }
+  },
+  {
+    "model": "backoffice.publishers",
+    "pk": 3,
+    "fields": {
+      "name": "Bloomsbury",
+      "compagny_name": "Bloomsbury Publishing",
+      "address": "50 Bedford Square",
+      "city": "London",
+      "state": "UK",
+      "zip": "WC1B",
+      "telephone": "0207631000",
+      "fax": "0207631001",
+      "comments": "Éditeur britannique"
+    }
+  },
+
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-001",
+    "fields": {
+      "title": "Les Misérables",
+      "year_published": 1862,
+      "pubid": 1,
+      "description": "Roman social",
+      "notes": "Classique",
+      "subject": "Société",
+      "comments": "Œuvre majeure",
+      "authors": [1]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-002",
+    "fields": {
+      "title": "1984",
+      "year_published": 1949,
+      "pubid": 2,
+      "description": "Dystopie",
+      "notes": "Politique",
+      "subject": "Totalitarisme",
+      "comments": "Roman visionnaire",
+      "authors": [2]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-003",
+    "fields": {
+      "title": "La Ferme des animaux",
+      "year_published": 1945,
+      "pubid": 2,
+      "description": "Satire",
+      "notes": "Allégorie",
+      "subject": "Politique",
+      "comments": "Critique du pouvoir",
+      "authors": [2]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-004",
+    "fields": {
+      "title": "Orgueil et Préjugés",
+      "year_published": 1813,
+      "pubid": 1,
+      "description": "Roman romantique",
+      "notes": "Classique",
+      "subject": "Relations sociales",
+      "comments": "Œuvre majeure",
+      "authors": [3]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-005",
+    "fields": {
+      "title": "L'Étranger",
+      "year_published": 1942,
+      "pubid": 1,
+      "description": "Roman philosophique",
+      "notes": "Absurde",
+      "subject": "Existentialisme",
+      "comments": "Roman emblématique",
+      "authors": [4]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-006",
+    "fields": {
+      "title": "La Peste",
+      "year_published": 1947,
+      "pubid": 1,
+      "description": "Allégorie",
+      "notes": "Philosophie",
+      "subject": "Humanisme",
+      "comments": "Réflexion morale",
+      "authors": [4]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-007",
+    "fields": {
+      "title": "Harry Potter à l'école des sorciers",
+      "year_published": 1997,
+      "pubid": 3,
+      "description": "Fantasy",
+      "notes": "Jeunesse",
+      "subject": "Magie",
+      "comments": "Premier tome",
+      "authors": [5]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-008",
+    "fields": {
+      "title": "Harry Potter et la Chambre des secrets",
+      "year_published": 1998,
+      "pubid": 3,
+      "description": "Fantasy",
+      "notes": "Jeunesse",
+      "subject": "Magie",
+      "comments": "Deuxième tome",
+      "authors": [5]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-009",
+    "fields": {
+      "title": "Notre-Dame de Paris",
+      "year_published": 1831,
+      "pubid": 1,
+      "description": "Roman historique",
+      "notes": "Classique",
+      "subject": "Histoire",
+      "comments": "Roman célèbre",
+      "authors": [1]
+    }
+  },
+  {
+    "model": "backoffice.title",
+    "pk": "ISBN-010",
+    "fields": {
+      "title": "Discours sur le colonialisme",
+      "year_published": 1950,
+      "pubid": 1,
+      "description": "Essai",
+      "notes": "Politique",
+      "subject": "Colonialisme",
+      "comments": "Texte engagé",
+      "authors": [4]
+    }
+  }
+]

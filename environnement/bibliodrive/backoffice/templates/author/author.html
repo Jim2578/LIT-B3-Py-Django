@@ -1,0 +1,10 @@
+{% extends "gabari.html"%}
+{% block content %}
+  <h1>List of Author</h1>
+  <div class="contentAuthor">
+  {% for a in author%}
+      <a href="author_detail/{{a.id}}" class="cardAuthor">{{a.name}}</a>
+  {% endfor %}
+  </div>
+{% endblock%}
+ 
