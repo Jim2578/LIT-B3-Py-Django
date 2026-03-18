@@ -1,39 +1,50 @@
-{% extends "gabari.html"%}
+{% extends "gabari.html" %}
 {% block content %}
-    <h3>Book: {{book.title}} - {{book.year_published}}</h3></br>
-    <h4>{{book.description}}</h4></br>
-    <h4>{{book.notes}}</h4></br>
-    <h4>{{book.subject}} - {{book.comments}}</h4></br>
-    <h4>Author:</h4></br>
-    <div class="button-container">
-    {% for a in book.authors.all%}
-            <a href="{% url 'author_detail' author_id=a.id %}" class="book-button">
-                {{a.name}}
-            </a>
-    {% endfor %}
+<div class="book-detail-container">
+    <h1 class="book-title">{{book.title}} <span class="book-year">- {{book.year_published}}</span></h1>
+    
+    <div class="book-info-section">
+        <p class="book-description">{{book.description}}</p>
+        <p class="book-notes">{{book.notes}}</p>
+        <p class="book-meta"><strong>Genre/Sujet :</strong> {{book.subject}} - {{book.comments}}</p>
     </div>
-    <h4>Publishers:</h4></br>
-    <div class="button-container">
-    {% for p in pub%}
-            <a href="{% url 'publisher_detail' pubid=p.pubid %}" class="book-button">
-                {{p.name}}
-            </a>
-    {% endfor %}
+
+    <div class="detail-section">
+        <h4 class="section-label">Author:</h4>
+        <div class="tags-container">
+            {% for a in book.authors.all %}
+                <a href="{% url 'author_detail' author_id=a.id %}" class="detail-tag">
+                    {{a.name}}
+                </a>
+            {% endfor %}
+        </div>
     </div>
-    {% if book.reserved %}
-    <div>
-        <p>Livre deja réservez</p>
+
+    <div class="detail-section">
+        <h4 class="section-label">Publishers:</h4>
+        <div class="tags-container">
+            {% for p in pub %}
+                <a href="{% url 'publisher_detail' pubid=p.pubid %}" class="detail-tag">
+                    {{p.name}}
+                </a>
+            {% endfor %}
+        </div>
     </div>
-    {% else %}
-        {% if user.is_authenticated %}
-            <a href="{% url 'book_reserved' book_id=book.isbn %}" class="">
-                Reserver le livre
-            </a>
+
+    <div class="reservation-box">
+        {% if book.reserved %}
+            <div class="status-reserved">
+                <p>Ce livre est déjà réservé</p>
+            </div>
         {% else %}
-            <p>Connectez vous pour pouvoir le reserver</p>
+            {% if user.is_authenticated %}
+                <a href="{% url 'book_reserved' book_id=book.isbn %}" class="nav-btn">
+                    Réserver le livre
+                </a>
+            {% else %}
+                <p class="login-warning">Connectez-vous pour pouvoir le réserver</p>
+            {% endif %}
         {% endif %}
-    {% endif %}
-{% endblock%}
-
-
- 
+    </div>
+</div>
+{% endblock %}

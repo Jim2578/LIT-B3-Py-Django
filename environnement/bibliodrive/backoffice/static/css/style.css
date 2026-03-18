@@ -578,3 +578,71 @@ button[type="submit"]:hover {
     background: #222;
     color: #777 !important;
 }
+
+/* Container global */
+.book-detail-container {
+    padding: 40px 10%;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.book-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2d5a27;
+    padding-bottom: 10px;
+}
+
+.book-year { color: #888; font-size: 1.5rem; }
+
+/* Sections de texte */
+.book-info-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.section-label { margin: 25px 0 10px 0; color: #aaa; }
+
+/* Tags (Auteurs & Editeurs) */
+.tags-container { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.detail-tag {
+    background: #2d5a27;
+    color: white !important;
+    text-decoration: none !important;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    min-width: 200px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.detail-tag:hover { background: #3d7a35; }
+
+/* Zone de Réservation */
+.reservation-box { margin-top: 50px; }
+
+.btn-reserve {
+    display: inline-block;
+    background: #ffffff;
+    color: #1a1a1a !important;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+.btn-reserve:hover { transform: scale(1.05); background: #f0f0f0; }
+
+.status-reserved {
+    color: #ff4444;
+    font-style: italic;
+    border: 1px solid #ff4444;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
