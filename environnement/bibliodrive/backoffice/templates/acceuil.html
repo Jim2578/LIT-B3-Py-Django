@@ -1,5 +1,34 @@
-{% extends "gabari.html"%}
+{% extends "gabari.html" %}
 {% block content %}
-    <h3>Bienvenue sur le bonheur des Yeux !</h3></br>
-    <h4>Un livre achete, autant de petit bonheur de trouvé</h4></br>
-{% endblock%}
+<div class="home-wrapper">
+    <section class="hero-v2">
+        <h1 class="main-title">Bienvenue sur <span class="green-text">Livra'main</span></h1>
+        <p class="tagline">"Un livre acheté, autant de petits bonheurs trouvés."</p>
+        <div class="cta-group">
+            <a href="/books/" class="btn-primary">Parcourir le catalogue</a>
+        </div>
+    </section>
+
+    <section class="info-grid">
+        <div class="info-box">
+            <div class="icon">📖</div>
+            <h3>Culture pour tous</h3>
+            <p>Accédez à des milliers d'ouvrages sélectionnés avec soin pour votre plaisir de lire.</p>
+        </div>
+        <div class="info-box">
+            <div class="icon">🚀</div>
+            <h3>Service Rapide</h3>
+            <p>Une interface fluide pour trouver et réserver votre prochain coup de cœur en quelques secondes.</p>
+        </div>
+        <div class="info-box">
+            <div class="icon">✨</div>
+            <h3>Nouveautés</h3>
+            <p>Restez à l'affût des dernières parutions ajoutées quotidiennement par nos éditeurs.</p>
+        </div>
+    </section>
+
+    <section class="quote-area">
+        <p class="quote-text">"La lecture est une amitié." — Marcel Proust</p>
+    </section>
+</div>
+{% endblock %}

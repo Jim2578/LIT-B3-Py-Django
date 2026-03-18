@@ -1,0 +1,27 @@
+{% extends "gabari.html" %}
+{% block content %}
+<div class="management-wrapper">
+    <h1 class="management-title">Liste des ouvrages réservés</h1>
+
+    <div class="management-grid">
+    {% if books %}
+        {% for b in books %}
+            <div class="management-card">
+                <div class="book-info">
+                    <span class="book-name">{{b.title}}</span>
+                    <span class="book-isbn">ISBN: {{b.isbn}}</span>
+                </div>
+                <div class="action-group">
+                    <a href="{% url 'book_detail' book_id=b.isbn %}" class="btn-view">Voir</a>
+                    <a href="{% url 'book_reserved' book_id=b.isbn %}" class="btn-manage">Gérer la réservation</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="empty-state">
+            <p>Aucun livre n'est réservé actuellement.</p>
+        </div>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}

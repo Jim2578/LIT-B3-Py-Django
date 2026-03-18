@@ -78,3 +78,7 @@ def book_reserved(request, book_id):
     book.reserved = not book.reserved
     book.save()
     return redirect("acceuil")
+
+def gestion(request):
+    books = Title.objects.filter(reserved = True)
+    return render(request, 'gestion.html', {'books': books, 'active_nav': 'gestion'})

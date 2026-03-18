@@ -1,95 +1,3 @@
-h1 {
-    color: whitesmoke;
-    text-decoration: solid;
-}
-.contentAuthor {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
-
-.cardAuthor {
-  flex: 1;
-  /* 1. On enlève le style moche par défaut */
-  border: none;
-  outline: none;
-  appearance: none;
-  
-  /* 2. On crée le look moderne */
-  background-color: #2D5A27; /* Un beau vert forêt */
-  color: white;
-  padding: 25px 15px;
-  border-radius: 12px;      /* Coins arrondis */
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-  
-  /* 3. L'ombre pour donner du relief */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-  /* 4. Animation fluide */
-  transition: all 0.3s ease;
-  background-image: none;    /* Supprime les dégradés gris par défaut */
-  background-color: #2D5A27; /* Force TA couleur (ex: vert forêt) */
-  appearance: none;          /* Supprime le look "système" du bouton */
-  -webkit-appearance: none;  /* Idem pour Safari/Chrome */
-  border: none;
-}
-
-/* Effet quand on passe la souris */
-.cardAuthor:hover {
-  background-color: #3e7b35;
-  transform: translateY(-3px); /* Le bouton monte légèrement */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Effet quand on clique */
-.cardAuthor:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.cardAuthorR {
-  flex: 1;
-  /* 1. On enlève le style moche par défaut */
-  border: none;
-  outline: none;
-  appearance: none;
-  
-  /* 2. On crée le look moderne */
-  background-color: red; /* Un beau vert forêt */
-  color: white;
-  padding: 25px 15px;
-  border-radius: 12px;      /* Coins arrondis */
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-  
-  /* 3. L'ombre pour donner du relief */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-  /* 4. Animation fluide */
-  transition: all 0.3s ease;
-  background-image: none;    /* Supprime les dégradés gris par défaut */
-  background-color: red; /* Force TA couleur (ex: vert forêt) */
-  appearance: none;          /* Supprime le look "système" du bouton */
-  -webkit-appearance: none;  /* Idem pour Safari/Chrome */
-  border: none;
-}
-
-/* Effet quand on passe la souris */
-.cardAuthorR:hover {
-  background-color: red;
-  transform: translateY(-3px); /* Le bouton monte légèrement */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Effet quand on clique */
-.cardAuthorR:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 /* Le conteneur qui aligne sur une ligne */
 .button-container {
     display: flex;
@@ -553,7 +461,6 @@ button[type="submit"]:hover {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* Style des cartes (Réservé / cardAuthorR) */
 .livreR {
     display: flex;
     align-items: center;
@@ -624,20 +531,6 @@ button[type="submit"]:hover {
 /* Zone de Réservation */
 .reservation-box { margin-top: 50px; }
 
-.btn-reserve {
-    display: inline-block;
-    background: #ffffff;
-    color: #1a1a1a !important;
-    padding: 15px 30px;
-    border-radius: 30px;
-    text-decoration: none !important;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: transform 0.2s;
-}
-
-.btn-reserve:hover { transform: scale(1.05); background: #f0f0f0; }
-
 .status-reserved {
     color: #ff4444;
     font-style: italic;
@@ -645,4 +538,358 @@ button[type="submit"]:hover {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;
+}
+
+/* Titre principal */
+h1 {
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 40px 0 30px 5%;
+}
+
+/* Grille des auteurs */
+.contentAuthor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 5%;
+    justify-content: flex-start; /* Aligne à gauche comme sur ton screen */
+}
+
+/* Carte de l'auteur */
+.cardAuthor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Dimensions */
+    width: 180px; 
+    height: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    
+    /* Look & Couleurs */
+    background: linear-gradient(145deg, #3d6e35, #264a22); /* Dégradé pour le relief */
+    color: #ffffff !important; /* Force le blanc pour écraser le bleu des liens */
+    text-decoration: none !important; /* Supprime le trait de soulignement */
+    
+    /* Typographie */
+    font-weight: 600;
+    font-size: 1rem;
+    
+    /* Ombre et Transition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol */
+.cardAuthor:hover {
+    transform: translateY(-5px); /* La carte monte légèrement */
+    background: #4a8541; /* Vert plus clair au survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    color: #ffffff !important;
+}
+
+/* Container principal */
+.author-detail-wrapper {
+    padding: 40px 5%;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Style du Nom et de l'Année */
+.author-name {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.author-birth-year {
+    font-size: 1.5rem;
+    color: #bbbbbb;
+    margin-bottom: 40px;
+}
+
+/* Grille des livres de l'auteur */
+.author-books-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Boutons des livres */
+.book-item-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    min-width: 250px; /* Largeur pour les titres longs */
+    padding: 15px 25px;
+    border-radius: 8px;
+    
+    background: linear-gradient(145deg, #325c2b, #24421e);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.book-item-link:hover {
+    transform: translateY(-5px);
+    background: #3d7a35;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Container de l'éditeur */
+.publisher-detail-container {
+    padding: 40px 5%;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.publisher-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.company-name {
+    color: #888;
+    font-size: 1.4rem;
+}
+
+/* Infos de contact */
+.publisher-contact-info {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.sub-title {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Grille des livres */
+.publisher-books-grid {
+    display: flex;
+    flex-direction: column; /* Aligné verticalement comme sur ton screen */
+    gap: 12px;
+    max-width: 400px; /* Pour éviter que les boutons soient trop larges */
+}
+
+/* Style des boutons (Harmonisé avec le reste du site) */
+.publisher-book-card {
+    display: block;
+    padding: 15px 20px;
+    background: linear-gradient(145deg, #325c2b, #24421e);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.publisher-book-card:hover {
+    transform: translateX(10px); /* Petit décalage vers la droite au survol */
+    background: #3d7a35;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+}
+
+/* Container et Fond */
+.home-wrapper {
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 80px 10%;
+}
+
+/* Hero Section (Haut de page) */
+.hero-v2 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.main-title {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.green-text { color: #4CAF50; }
+
+.tagline {
+    font-size: 1.6rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+/* Boutons */
+.cta-group { display: flex; justify-content: center; gap: 20px; }
+
+.btn-primary {
+    background: #ffffff;
+    color: #1a1a1a !important;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    border: 2px solid #444;
+    color: #ffffff !important;
+    padding: 13px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { background: #4CAF50; color: white !important; }
+.btn-secondary:hover { border-color: #4CAF50; color: #4CAF50 !important; }
+
+/* Grille d'infos (Le remplissage) */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.info-box {
+    background: rgba(255,255,255, 0.03);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255, 0.05);
+}
+
+.icon { font-size: 3.5rem; margin-bottom: 20px; }
+.info-box h3 { color: #4CAF50; margin-bottom: 15px; }
+.info-box p { color: #999; line-height: 1.6; }
+
+/* Citation finale */
+.quote-area {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 50px;
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    color: #666;
+    letter-spacing: 2px;
+}
+
+/* Container global */
+.management-wrapper {
+    padding: 40px 5%;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.management-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-left: 5px solid #4CAF50;
+    padding-left: 15px;
+}
+
+/* Grille et Cartes */
+.management-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.management-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.management-card:hover {
+    background: rgba(76, 175, 80, 0.05);
+    border-color: #4CAF50;
+    transform: translateX(5px);
+}
+
+/* Infos Livre */
+.book-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.book-isbn {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 4px;
+}
+
+/* Boutons d'action */
+.action-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-view, .btn-manage {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: 0.2s;
+}
+
+.btn-view {
+    background: transparent;
+    border: 1px solid #444;
+    color: #bbb !important;
+}
+
+.btn-view:hover {
+    border-color: #ffffff;
+    color: #ffffff !important;
+}
+
+.btn-manage {
+    background: #4CAF50;
+    color: white !important;
+}
+
+.btn-manage:hover {
+    background: #3d8b40;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Message vide */
+.empty-state {
+    text-align: center;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    color: #666;
+    font-style: italic;
 }
