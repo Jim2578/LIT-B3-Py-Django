@@ -20,6 +20,19 @@
             </a>
     {% endfor %}
     </div>
+    {% if book.reserved %}
+    <div>
+        <p>Livre deja réservez</p>
+    </div>
+    {% else %}
+        {% if user.is_authenticated %}
+            <a href="{% url 'publisher_detail' isbn=book.isbn userid=user.id %}" class="">
+                Reserver le livre
+            </a>
+        {% else %}
+            <p>Connectez vous pour pouvoir le reserver</p>
+        {% endif %}
+    {% endif %}
 {% endblock%}
 
 
